@@ -11,21 +11,21 @@ const modeButtons = document.querySelectorAll(".mode");
 
 init();
 
-function init () {
+function init() {
     //mode button
     for (let i = 0; i < modeButtons.length; i++) {
-        modeButtons[i].addEventListener("click", function(){
+        modeButtons[i].addEventListener("click", function () {
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
             this.classList.add("selected");
-            this.textContent === "Easy" ? numberOfSquares = 3: numberOfSquares = 6;
+            this.textContent === "Easy" ? numberOfSquares = 3 : numberOfSquares = 6;
             reset();
-        });   
+        });
     }
 
-    for (let i = 0; i < squares.length; i++){
+    for (let i = 0; i < squares.length; i++) {
         //add click listeners to squares
-        squares[i].addEventListener("click", function() {
+        squares[i].addEventListener("click", function () {
             //grab color of clicked square
             const clickedColor = this.style.backgroundColor;
             //compare color to pickedColor
@@ -38,14 +38,14 @@ function init () {
                 this.style.backgroundColor = "#232323";
                 messageDisplay.textContent = "Try Again";
             }
-            });
+        });
     }
-reset();
+    reset();
 }
 
 
 
-function reset(){
+function reset() {
     //generate all new colours
     colors = generateRandomColors(numberOfSquares);
     //pick a new random color from array
@@ -63,13 +63,13 @@ function reset(){
             squares[i].style.backgroundColor = colors[i];
         } else {
             squares[i].style.display = "none";
-        }    
+        }
     }
-    heading.style.backgroundColor = "steelblue"; 
+    heading.style.backgroundColor = "steelblue";
 }
 
 
-resetButton.addEventListener("click", function(){
+resetButton.addEventListener("click", function () {
     reset();
 })
 
@@ -88,15 +88,15 @@ function pickColor() {
 }
 
 function generateRandomColors(num) {
-      //make array
-      let arr = [];
-      //add num random colors to arr
-      for (let i = 0; i < num; i++) {
+    //make array
+    let arr = [];
+    //add num random colors to arr
+    for (let i = 0; i < num; i++) {
         //get random color and push into arr
         arr.push(randomColor());
-      }
-      //return that array 
-      return arr;
+    }
+    //return that array 
+    return arr;
 }
 
 function randomColor() {

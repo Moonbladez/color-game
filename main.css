@@ -21,7 +21,7 @@ body {
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
 }
 
 #stripe {
@@ -37,7 +37,7 @@ h1 {
     justify-content: center;
 }
 
-#message{
+#message {
     display: flex;
     justify-content: center;
 }
